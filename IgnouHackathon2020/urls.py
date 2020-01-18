@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from FarmerDashBoard.views import HomePage
+from FarmerDashBoard.views import home_page
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Farmer_Buyer_Accounts.urls')),
-    path('', HomePage, name='home')
+    path('', include('FarmerDashBoard.urls')),
+    path('', home_page, name='home')
 
 ]
