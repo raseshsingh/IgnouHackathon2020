@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="{% static 'qbls.png'%}">
+
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+  <div class="container">
+    <div class="navbar-translate">
+      <a class="navbar-brand" href="">
+        Farmer MarketPlace </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="dropdown nav-item">
+
+          <div class="dropdown-menu dropdown-with-icons">
+
+            <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
+              <i class="material-icons">content_paste</i> Documentation
+            </a>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="page-header header-filter" style="background-image: url('qbls.png'); background-size: cover; background-position: top center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+        <div class="card card-login">
+          <form class="form" method="post" novalidate>
+
+            <div class="card-header card-header-primary text-center">
+              <h4 class="card-title">Login</h4>
+              <div class="social-line">
+                <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-just-icon btn-link">
+                  <i class="fa fa-facebook-square"></i>
+
+                </a>
+                <a href="#pablo" class="btn btn-just-icon btn-link">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a href="" class="btn btn-just-icon btn-link">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </div>
+            </div>
+            {% csrf_token %}
+            {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

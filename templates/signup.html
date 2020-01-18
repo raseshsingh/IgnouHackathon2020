@@ -1,0 +1,45 @@
+{% extends 'base_accounts.html' %}
+{% load static %}
+
+{% block title %}Sign up to Farmer Marketplace {% endblock %}
+
+{% block content %}
+
+{% if registered %}
+      Rango says: <strong>thank you for registering!</strong>
+      <a href="/rango/">Return to the homepage.</a><br />
+{% else %}
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title text-center">Create Your Account</h3>
+              <p class="card-text text-center"> Whether you're buyer/seller, fill the form given below to get registered.  </p>
+
+          <div class="social-line">
+            <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-just-icon btn-link">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            <a href="#pablo" class="btn btn-just-icon btn-link">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="" class="btn btn-just-icon btn-link">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </div>
+          <form action= "" id="user_form" method="post"   enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'sub_account_creation_form.html' %}
+            <button type="submit" class="btn btn-primary btn-block" name="submit" value="Register">Create an account</button>
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          Already have an account? <a href="{% url 'login' %}">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+{% endblock %}
