@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block breadcrumb %}
+ <li class="breadcrumb-item active">Boards</li>
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Buy Premium harvested Crops</h1>
+    <p class="lead">Buy Premium Harvested Crops directly from millions of farmers in India </p>
+  </div>
+</div>
+
+
+<div class="container">
+ <div class="row">
+   {% for harvests in object_list %}
+
+   <div class="col"  style="min-width:350px; max-width: 30%">
+     <div class="card bg-dark text-white">
+       <img class="card-img-bottom" src="" alt="Card image cap">
+
+
+      <div class="card-body" >
+        <h4 class="card-title"><a href="">{{ harvests.Crop_Name }}</a></h4>
+           <p class="card-text" >{{ harvests.Harvest_Description}}</p>
+           <a href="" class="btn btn-primary" "material-icons">Buy {{harvests.Harvest_type}} Now</a>
+     </div>
+   </div>
+ </div>
+{% endfor %}
+
+</div>
+</div>
+
+
+{% endblock %}

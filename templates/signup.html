@@ -6,8 +6,8 @@
 {% block content %}
 
 {% if registered %}
-      Rango says: <strong>thank you for registering!</strong>
-      <a href="/rango/">Return to the homepage.</a><br />
+       <strong>Thank you for registering!</strong>
+      <a href="{% url 'home' %}">Return to the homepage.</a><br />
 {% else %}
 
   <div class="row justify-content-center">

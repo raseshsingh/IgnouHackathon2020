@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Sell Your Harvest Crop to thousands of wholesalers in India {% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+  {% if sold %}
+       <strong>Thank you for Selling with Us!</strong>
+
+    <p> We will make pickup arrangement to sell your crop proceeds shortly. </p>
+      <a href="{% url 'home' %}">Return to the homepage.</a><br />
+{% else %}
+
+    <h1 class="display-4">Sell Your Harvested crop to Millions of Buyers Across Country</h1>
+    <p class="lead"></p>
+  </div>
+</div>
+
+
+  <form  action="" method="post" enctype="multipart/form-data" class="mb-4">
+    {% csrf_token %}
+    {% include 'includes/sell_form.html' %}
+    <button type="submit" class="btn btn-success"> SUBMIT</button>
+  </form>
+
+
+{% endif %}
+{% endblock %}

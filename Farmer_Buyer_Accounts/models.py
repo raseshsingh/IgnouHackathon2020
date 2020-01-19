@@ -22,3 +22,16 @@ class FarmerBuyerAccount(models.Model):
 
     def __str__(self):
         return self.user
+
+
+class UserProfile(models.Model):
+    """
+    Model representing a User Profile by extending User Model
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    Title = models.CharField(max_length=30, blank=True)
+    City = models.CharField(max_length=30, blank=True)
+    FullAddress = models.TextField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.user.username

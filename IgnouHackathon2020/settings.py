@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Farmer_Buyer_Accounts',
-    'widget_tweaks'
+    'MarketPlace',
+    'widget_tweaks',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -122,4 +124,6 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'DashBoard'
+LOGOUT_REDIRECT_URL = 'home'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

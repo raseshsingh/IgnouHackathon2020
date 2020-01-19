@@ -1,6 +1,7 @@
 from django.urls import path, include
 from django.contrib.auth import views
-from .views import signup
+from .views import signup, register
+
 # from .views import signup
 
 urlpatterns = [
@@ -9,5 +10,6 @@ urlpatterns = [
     path('oauth/', include('social_django.urls', namespace='social')),
 
     path('signup', signup, name='signup'),
-
+    # optional
+    path('register', register, name='register')
 ]

@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Farmer_Buyer_Accounts.urls')),
     path('', include('FarmerDashBoard.urls')),
+    path('', include('MarketPlace.urls')),
     path('', home_page, name='home')
 
 ]
