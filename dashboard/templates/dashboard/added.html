@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-warning bg-success">
+                        <p> Tomato has been added to your items.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card overflow-hidden">
+                        <img src="{% static 'dashboard/images/vegs/onion.jpg' %}" width="100%">
+                        <div class="card-body">
+                            <h3>Onion</h3>
+                            <p class="card-text">Best quality from Punjab.
+                            <br> 20kg - <b>₹30</b></p>
+                            <button class="btn-danger btn btn-block">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card overflow-hidden">
+                        <img src="{% static 'dashboard/images/vegs/tomato.jpg' %}" width="100%">
+                        <div class="card-body">
+                            <h3>Tomato</h3>
+                            <p class="card-text">Good Red Tomato.<br>
+                            5Kg - <b>₹32</b></p>
+                            <button class="btn-danger btn btn-block"><a href="{% url 'all_items' %}" class="text-white">Remove</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

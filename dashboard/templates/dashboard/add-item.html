@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+             <section id="dashboard-analytics">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex flex-column align-items-start pb-0">
+                                    <div class="avatar bg-rgba-primary p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i class="feather icon-zap text-primary font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-bold-700 mt-1 mb-25">₹49/kg</h2>
+                                    <p class="mb-0">Today's Market Price - Onion</p>
+                                </div>
+                                <div class="card-content" style="position: relative;">
+                                    <div id="subscribe-gain-chart" style="min-height: 100px;">
+                                    </div>
+                                    <div class="resize-triggers">
+                                        <div class="expand-trigger">
+                                            <div style="width: 237px; height: 101px;"></div>
+                                        </div>
+                                        <div class="contract-trigger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex flex-column align-items-start pb-0">
+                                    <div class="avatar bg-rgba-warning p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i class="feather icon-calendar text-warning font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-bold-700 mt-1 mb-25">₹52/kg</h2>
+                                    <p class="mb-0">Price in February (Forecasted Price)</p>
+                                </div>
+                                <div class="card-content" style="position: relative;">
+                                    <div id="orders-received-chart" style="min-height: 100px;"></div>
+                                    <div class="resize-triggers">
+                                        <div class="expand-trigger">
+                                            <div style="width: 237px; height: 101px;"></div>
+                                        </div>
+                                        <div class="contract-trigger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">Add Item</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="container mt-2">
+                                <form method="post" action="{% url 'added' %}">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                        <label for="">Name<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="">Quantity<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="">Price<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label for="">Description<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    </div>
+                                    <div class="row my-2">
+                                        <div class="col-md-12">
+                                            <input type="file" class="form-control" id="">
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary btn-block mb-2 waves-effect waves-light" type="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

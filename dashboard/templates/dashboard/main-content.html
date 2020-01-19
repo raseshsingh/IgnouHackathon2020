@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- BEGIN: Content-->
+{% block content %}
+    <style>.card-product .img-wrap {
+        border-radius: 3px 3px 0 0;
+        overflow: hidden;
+        position: relative;
+        height: 220px;
+        text-align: center;
+    }
+
+    .card-product .img-wrap img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .card-product .info-wrap {
+        overflow: hidden;
+        padding: 15px;
+        border-top: 1px solid #eee;
+    }
+
+    .card-product .bottom-wrap {
+        padding: 15px;
+        border-top: 1px solid #eee;
+    }
+
+    .label-rating {
+        margin-right: 10px;
+        color: #333;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .card-product .price-old {
+        color: #999;
+    }</style>
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- Dashboard Analytics Start -->
+                <section id="dashboard-analytics">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="card bg-analytics text-white">
+                                <div class="card-content">
+                                    <div class="card-body text-center">
+                                        <img src="{% static 'dashboard/images/elements/decore-left.png' %}" class="img-left" alt="
+            card-img-left">
+                                        <img src="{% static 'dashboard/images/elements/decore-right.png' %}" class="img-right" alt="
+            card-img-right">
+                                        <div class="avatar avatar-xl bg-primary shadow mt-0">
+                                            <div class="avatar-content">
+                                                <i class="feather icon-award white font-large-1"></i>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <h1 class="mb-2 text-white">Congratulations Codolic,</h1>
+                                            <p class="m-auto w-75">You have done <strong>57.6%</strong> more sales of Onion today.<br>
+                                            On price of <b>₹35/per KG</b>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex flex-column align-items-start pb-0">
+                                    <div class="avatar bg-rgba-primary p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i class="feather icon-zap text-primary font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-bold-700 mt-1 mb-25">₹49/kg</h2>
+                                    <p class="mb-0">Market Price - Onion</p>
+                                </div>
+                                <div class="card-content" style="position: relative;">
+                                    <div id="subscribe-gain-chart" style="min-height: 100px;">
+                                    </div>
+                                    <div class="resize-triggers">
+                                        <div class="expand-trigger">
+                                            <div style="width: 237px; height: 101px;"></div>
+                                        </div>
+                                        <div class="contract-trigger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-header d-flex flex-column align-items-start pb-0">
+                                    <div class="avatar bg-rgba-warning p-50 m-0">
+                                        <div class="avatar-content">
+                                            <i class="feather icon-calendar text-warning font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-bold-700 mt-1 mb-25">₹52/kg</h2>
+                                    <p class="mb-0">Price in February</p>
+                                </div>
+                                <div class="card-content" style="position: relative;">
+                                    <div id="orders-received-chart" style="min-height: 100px;"></div>
+                                    <div class="resize-triggers">
+                                        <div class="expand-trigger">
+                                            <div style="width: 237px; height: 101px;"></div>
+                                        </div>
+                                        <div class="contract-trigger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Dispatched Orders</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="table-responsive mt-1">
+                            <table class="table table-hover-animation mb-0">
+                                <thead>
+                                <tr>
+                                    <th>ORDER</th>
+                                    <th>STATUS</th>
+                                    <th>OPERATORS</th>
+                                    <th>LOCATION</th>
+                                    <th>DISTANCE</th>
+                                    <th>START DATE</th>
+                                    <th>EST DEL. DT</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>#879985</td>
+                                    <td><i class="fa fa-circle font-small-3 text-success mr-50"></i>Moving</td>
+                                    <td class="p-1">
+                                        <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                                            <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                data-placement="bottom" data-original-title="Vinnie Mostowy"
+                                                class="avatar pull-up">
+                                                <img class="media-object rounded-circle"
+                                                     src="{% static 'dashboard/images/portrait/small/3.jpg' %}"
+                                                     alt="Avatar" height="40" width="40">
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>Greater Kailash, Delhi</td>
+                                    <td>
+                                        <span>6 km</span>
+                                        <div class="progress progress-bar-success mt-1 mb-0">
+                                            <div class="progress-bar" role="progressbar" style="width: 80%"
+                                                 aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                    <td>16:22 19/01/2020</td>
+                                    <td>29/01/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>#156897</td>
+                                    <td><i class="fa fa-circle font-small-3 text-warning mr-50"></i>Pending</td>
+                                    <td class="p-1">
+                                        <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                                            <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                data-placement="bottom" data-original-title="Trina Lynes"
+                                                class="avatar pull-up">
+                                                <img class="media-object rounded-circle"
+                                                     src="{% static 'dashboard/images/portrait/small/1.jpg' %}"
+                                                     alt="Avatar" height="40" width="40">
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>Khanna, Punjab</td>
+                                    <td>
+                                        <span>234 km</span>
+                                        <div class="progress progress-bar-warning mt-1 mb-0">
+                                            <div class="progress-bar" role="progressbar" style="width: 60%"
+                                                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                    <td>11:18 18/01/2020</td>
+                                    <td>28/01/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>#568975</td>
+                                    <td><i class="fa fa-circle font-small-3 text-success mr-50"></i>Moving</td>
+                                    <td class="p-1">
+                                        <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                                            <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                data-placement="bottom" data-original-title="Prabhu Deva"
+                                                class="avatar pull-up">
+                                                <img class="media-object rounded-circle"
+                                                     src="{% static 'dashboard/images/portrait/small/2.jpg' %}"
+                                                     alt="Avatar" height="40" width="40">
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>Madurai, Tamil Nadu</td>
+                                    <td>
+                                        <span>2491 km</span>
+                                        <div class="progress progress-bar-success mt-1 mb-0">
+                                            <div class="progress-bar" role="progressbar" style="width: 70%"
+                                                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                    <td>10:58 20/01/2020</td>
+                                    <td>30/01/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>#245689</td>
+                                    <td><i class="fa fa-circle font-small-3 text-danger mr-50"></i>Canceled</td>
+                                    <td class="p-1">
+                                        <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                                            <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                data-placement="bottom" data-original-title="Ram Prkash"
+                                                class="avatar pull-up">
+                                                <img class="media-object rounded-circle"
+                                                     src="{% static 'dashboard/images/portrait/small/4.jpg' %}"
+                                                     alt="Avatar" height="40" width="40">
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td>Gurgoan, Haryana</td>
+                                    <td>
+                                        <span>12 km</span>
+                                        <div class="progress progress-bar-danger mt-1 mb-0">
+                                            <div class="progress-bar" role="progressbar" style="width: 95%"
+                                                 aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                    <td>14:58 17/01/2020</td>
+                                    <td>22/01/2020</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <!-- Dashboard Analytics end -->
+
+    </div>
+{% endblock %}
+<!-- END: Content-->
